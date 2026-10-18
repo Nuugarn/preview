@@ -107,7 +107,7 @@ canvas.addEventListener('keydown',e=>{
   if(e.key==='Home'){e.preventDefault();controls.target.set(0,1.23,.05);startingCamera();}
 });
 
-new GLTFLoader().load('./assets/hidden-cabinet.glb?v=hinge3',gltf=>{
+new GLTFLoader().load('./assets/hidden-cabinet.glb?v=hinge4',gltf=>{
   model=gltf.scene;scene.add(model);door=model.getObjectByName('Door_Hinge');
   book=model.getObjectByName('Book_Trigger');
   if(!door||!book)throw new Error('Door or book pivot is missing from the model');
@@ -148,7 +148,7 @@ new GLTFLoader().load('./assets/hidden-cabinet.glb?v=hinge3',gltf=>{
     return {ready:true,phase,bookDegrees:bookAngle*180/Math.PI,bookScreen,closeTargets,angleDegrees:currentAngle*180/Math.PI,targetDegrees:targetAngle*180/Math.PI,embeddedAnimations:gltf.animations.map(a=>a.name),camera:camera.position.toArray(),lastTap,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles};
   };
 },xhr=>{
-  if(xhr.total)document.querySelector('#loading-text').textContent=`กำลังเตรียมโมเดล ${Math.round(xhr.loaded/xhr.total*100)}%`;
+  if(xhr.total)document.querySelector('#loading-text').textContent=`กำลังเตรียมโมเดล ${Math.min(99,Math.round(xhr.loaded/xhr.total*100))}%`;
 },error=>{
   console.error(error);document.querySelector('#loading-text').textContent='โหลดโมเดลไม่สำเร็จ กรุณารีเฟรชหน้าเว็บ';
   document.querySelector('.loader').hidden=true;
