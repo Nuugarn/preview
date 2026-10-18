@@ -9,6 +9,8 @@ A charcoal cabinet set flush into a matching matte wall, with warm display light
 - Drag to orbit; use the mouse wheel or pinch to zoom.
 - Keyboard: focus the canvas, Enter/Space to activate; Home to reset the camera.
 
+The left pivot is connected to a fixed wall reveal with three hinges. The hidden right jamb is relieved to clear the cabinet during its inward swing.
+
 ## Hosting
 
 This is a static website. GitHub Pages serves the root of `main`. All browser dependencies and the GLB are included; no build step, account sign-in, or CDN is required to view it.

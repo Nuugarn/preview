@@ -107,7 +107,7 @@ canvas.addEventListener('keydown',e=>{
   if(e.key==='Home'){e.preventDefault();controls.target.set(0,1.23,.05);startingCamera();}
 });
 
-new GLTFLoader().load('./assets/hidden-cabinet.glb',gltf=>{
+new GLTFLoader().load('./assets/hidden-cabinet.glb?v=hinge3',gltf=>{
   model=gltf.scene;scene.add(model);door=model.getObjectByName('Door_Hinge');
   book=model.getObjectByName('Book_Trigger');
   if(!door||!book)throw new Error('Door or book pivot is missing from the model');
